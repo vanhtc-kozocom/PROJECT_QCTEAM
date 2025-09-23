@@ -13,30 +13,36 @@ let car = {
   brand: "Honda",
   model: "H1",
   year: 2020,
-  color: "White"
+  color: "White",
+
+ // Method: trả về tuổi xe
+  getAge: function () {
+    const currentYear = new Date().getFullYear();
+    return currentYear - this.year;
+  },
+
+  // Method: trả về chuỗi mô tả xe
+  getInfo: function () {
+    return `${this.brand} ${this.model} (${this.year}), màu ${this.color}`;
+  },
+
+  // Method: đổi màu xe
+  paint: function (newColor) {
+    this.color = newColor;
+    return `Xe đã được sơn lại thành màu ${this.color}`;
+  },
+
+  // Method: kiểm tra xe cũ hay không
+  isOld: function () {
+    return this.getAge() > 10;
+  }
 };
 
-// Function: tính tuổi xe
-function getAge(car) {
-  let currentYear = new Date().getFullYear();
-  return currentYear - car.year;
-}
-
-// Function: mô tả xe
-function getInfo(car) {
-  return `${car.brand} ${car.model}, sản xuất năm ${car.year}, màu ${car.color}`;
-}
-
-// Function: đổi màu xe
-function paint(car, newColor) {
-  car.color = newColor;
-  return `Xe đã được đổi màu thành ${car.color}`;
-}
-
-console.log(getInfo(car));        
-console.log("Tuổi xe:", getAge(car));
-console.log(paint(car, "red"));  
-console.log(getInfo(car)); 
+console.log(car.getInfo());       
+console.log("Tuổi xe:", car.getAge());  
+console.log("Xe cũ không?", car.isOld()); 
+console.log(car.paint("red"));   
+console.log(car.getInfo());      
 
 /* 2. Bài toán: Cho một mảng  [3, 7, 2, 9, 8, 10];
 Yêu cầu:
