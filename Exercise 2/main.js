@@ -108,3 +108,4 @@ console.log("Số nhỏ nhất:", getMin(arr));
 console.log("Số chẵn:", countEven(arr));
 console.log("Trung bình:", getAverage(arr));
 console.log("Mảng số lẻ:", getOddArray(arr));
+console.log('hello');
