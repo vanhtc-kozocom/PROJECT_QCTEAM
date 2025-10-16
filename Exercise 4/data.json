@@ -1,0 +1,42 @@
+{
+  "loginUsers": [
+    {
+      "username": "",
+      "password": "admin",
+      "expected": false,
+      "expectedMessage": "Username is required"
+    },
+
+    {
+      "username": "admin",
+      "password": "",
+      "expected": false,
+      "expectedMessage": "Password is required"
+    },
+     {
+      "username": "",
+      "password": "",
+      "expected": false,
+      "expectedMessage": "Username is required"
+    },
+    {
+      "username": "vanhtc",
+      "password": "admin",
+      "expected": false,
+      "expectedMessage": "Invalid username or password"
+    },
+    {
+      "username": "admin",
+      "password": "Test123",
+      "expected": false,
+      "expectedMessage": "Invalid username or password"
+    },
+    {
+      "username": "admin",
+      "password": "admin",
+      "expected": true,
+      "expectedMessage": "Login successful"
+    }
+
+  ]
+}
